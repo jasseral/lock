@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # DEPENDENCIES PART 
-#sudo apt-get install lightdm -y   # I NEED TEST THIS PART IF IS NECESSARY OR NOT 
-#sudo apt-get install openbox-gnome-session -y  # I NEED TEST THIS PART IF IS NECESSARY OR NOT 
+sudo apt-get install lightdm -y   # I NEED TEST THIS PART IF IS NECESSARY OR NOT 
+sudo apt-get install openbox-gnome-session -y  # I NEED TEST THIS PART IF IS NECESSARY OR NOT 
 sudo apt-get install openbox -y 
 sudo apt-get install obmenu -y 
 sudo apt-get install tint2 -y 
