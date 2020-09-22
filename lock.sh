@@ -133,7 +133,7 @@ EOF
 
 # END FIREFOX-CUSTOMIZATION
 
-
+mkdir ~/.config/nitrogen/
 
 # NITROGEN
 # Make the file  ~/.config/nitrogen/bg-saved.cfg
@@ -164,7 +164,7 @@ EOF
 
 
 # OPENBOX
-
+mkdir ~/.config/openbox/
 # Make the file  ~/.config/openbox/autostart.sh
 cat > ~/.config/openbox/autostart.sh <<EOF
 tint2 &
@@ -231,7 +231,7 @@ EOF
 # END_OPENBOX_COFIGURATION
 
 #TINT2
-
+mkdir ~/.config/tint2/
 # Make the file  userContent.css
 cat > ~/.config/tint2/tint2rc <<EOF
 
