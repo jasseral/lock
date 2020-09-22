@@ -134,7 +134,17 @@ EOF
 # END FIREFOX-CUSTOMIZATION
 
 
+
 # NITROGEN
+# Make the file  ~/.config/nitrogen/bg-saved.cfg
+cat > ~/.config/nitrogen/bg-saved.cfg <<EOF
+[xin_-1]
+file=~/Downloads/wallpaper1.png
+mode=4
+bgcolor=#000000
+
+EOF
+
 # Make the file  ~/.config/nitrogen/nitrogen.cfg
 cat > ~/.config/nitrogen/nitrogen.cfg <<EOF
 [geometry]
