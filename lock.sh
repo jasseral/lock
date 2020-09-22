@@ -1,126 +1,4 @@
 #!/bin/bash
-# ALL THIS PART IS FOR FIREFOX-CUSTOMIZATION
-
-USR=$SUDO_USER
-export DISPLAY=:0
-# Go to firefox folder
-cd ~/.mozilla/firefox/
-# Clear firefox folder
-rm -Rf *
-# Name a profile for firefox named sandbox
-sudo -u $1 firefox -CreateProfile sandbox
-# Got the name of the profile folder 
-PROFPATH=$(ls | grep sandbox)
-# Create a user.js file 
-cat > ~/.mozilla/firefox/$PROFPATH/user.js <<EOF
-user_pref("toolkit.legacyUserProfileCustomizations.stylesheets",true);
-EOF
-#Go to the profile folder
-cd ~/.mozilla/firefox/$PROFPATH
-# Make the folder called chrome for firefox-customization 
-mkdir chrome
-# make the file called userChrome.css
-cat > ~/.mozilla/firefox/$PROFPATH/chrome/userChrome.css <<EOF
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
-
-#toolbar-context-menu {display:none !important;}
-
-
-#autocomplete-history-dropmarker {
-display: none !important; }
-
-
-.urlbar-page-action {
-display: none !important;
-}
-.subviewbutton-nav{
-display: none !important;
-}
-
-
-#context-back,
-#context-blockimage,
-#context-bookmarklink,
-#context-bookmarkpage,
-#context-copy,
-#context-copyemail,
-#context-copyimg,
-#context-copylink,
-#context-cut,
-#context-delete,
-#context-forward,
-#context-metadata,
-#context-openlink,
-#context-openlinkintab,
-#context-paste,
-#context-reload,
-#context-saveimage,
-#context-savelink,
-#context-savepage,
-#context-searchselect,
-#context-selectall,
-#context-stop,
-#context-setWallpaper,
-#context-undo,
-#context-viewbgimage,
-#context-viewimage,
-#context-viewinfo,
-#context-viewpartialsource-mathml,
-#context-viewpartialsource-selection,
-#context-viewsource,
-#context-takescreenshot{
-display: none;
-}
-
-#PanelUI-menu-button
-{
-	display: none !important;
-}
-
-#TabsToolbar { visibility: collapse !important; }
-
-#tabs-newtab-button {
-  display: none !important;
-}
-
-/* Hide all  browser menus */
-#navigator-toolbox menu[label="File"],
-#navigator-toolbox menu[label="Edit"],
-#navigator-toolbox menu[label="View"],
-#navigator-toolbox menu[label="Go"],
-#navigator-toolbox menu[label="Bookmarks"],
-#navigator-toolbox menu[label="Tools"],
-#navigator-toolbox menu[label="Help"]
-#navigator-toolbox menu[label="History"]
-{ display: none !important; }
-
-#navigator-toolbox menu{ display: none !important; }
-
-EOF
-
-
-# Make the file  userContent.css
-cat > ~/.mozilla/firefox/$PROFPATH/chrome/userContent.css <<EOF
-@-moz-document url(about:blank),
-           	url(about:preferences),
-           	url(about:config),
-           	url(about:newtab)
-{
-  #newtab-window,
-  html,
-  body,
-  #newtab-customize-overlay
-  {
-	color: #b2b2b2 !important;
-	display: none !important;
-
-  }
-}
-EOF
-
-
-# END FIREFOX-CUSTOMIZATION
-
 
 # DEPENDENCIES PART 
 sudo apt-get install lightdm -y   # I NEED TEST THIS PART IF IS NECESSARY OR NOT 
@@ -131,6 +9,7 @@ sudo apt-get install tint2 -y
 sudo apt-get install nitrogen -y
 sudo apt-get install xdotool -y
 sudo apt install gnome-system-tools -y
+
 
 
 
@@ -448,6 +327,129 @@ tooltip_font_color = #dddddd 100
 
 EOF
 
+
+# ALL THIS PART IS FOR FIREFOX-CUSTOMIZATION
+
+USR=$SUDO_USER
+export DISPLAY=:0
+sudo -u $1 firefox -CreateProfile sandbox
+# Go to firefox folder
+cd ~/.mozilla/firefox/
+# Clear firefox folder
+rm -Rf *
+# Name a profile for firefox named sandbox
+sudo -u $1 firefox -CreateProfile sandbox
+# Got the name of the profile folder 
+PROFPATH=$(ls | grep sandbox)
+# Create a user.js file 
+cat > ~/.mozilla/firefox/$PROFPATH/user.js <<EOF
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets",true);
+EOF
+#Go to the profile folder
+cd ~/.mozilla/firefox/$PROFPATH
+# Make the folder called chrome for firefox-customization 
+mkdir chrome
+# make the file called userChrome.css
+cat > ~/.mozilla/firefox/$PROFPATH/chrome/userChrome.css <<EOF
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+#toolbar-context-menu {display:none !important;}
+
+
+#autocomplete-history-dropmarker {
+display: none !important; }
+
+
+.urlbar-page-action {
+display: none !important;
+}
+.subviewbutton-nav{
+display: none !important;
+}
+
+
+#context-back,
+#context-blockimage,
+#context-bookmarklink,
+#context-bookmarkpage,
+#context-copy,
+#context-copyemail,
+#context-copyimg,
+#context-copylink,
+#context-cut,
+#context-delete,
+#context-forward,
+#context-metadata,
+#context-openlink,
+#context-openlinkintab,
+#context-paste,
+#context-reload,
+#context-saveimage,
+#context-savelink,
+#context-savepage,
+#context-searchselect,
+#context-selectall,
+#context-stop,
+#context-setWallpaper,
+#context-undo,
+#context-viewbgimage,
+#context-viewimage,
+#context-viewinfo,
+#context-viewpartialsource-mathml,
+#context-viewpartialsource-selection,
+#context-viewsource,
+#context-takescreenshot{
+display: none;
+}
+
+#PanelUI-menu-button
+{
+	display: none !important;
+}
+
+#TabsToolbar { visibility: collapse !important; }
+
+#tabs-newtab-button {
+  display: none !important;
+}
+
+/* Hide all  browser menus */
+#navigator-toolbox menu[label="File"],
+#navigator-toolbox menu[label="Edit"],
+#navigator-toolbox menu[label="View"],
+#navigator-toolbox menu[label="Go"],
+#navigator-toolbox menu[label="Bookmarks"],
+#navigator-toolbox menu[label="Tools"],
+#navigator-toolbox menu[label="Help"]
+#navigator-toolbox menu[label="History"]
+{ display: none !important; }
+
+#navigator-toolbox menu{ display: none !important; }
+
+EOF
+
+
+# Make the file  userContent.css
+cat > ~/.mozilla/firefox/$PROFPATH/chrome/userContent.css <<EOF
+@-moz-document url(about:blank),
+           	url(about:preferences),
+           	url(about:config),
+           	url(about:newtab)
+{
+  #newtab-window,
+  html,
+  body,
+  #newtab-customize-overlay
+  {
+	color: #b2b2b2 !important;
+	display: none !important;
+
+  }
+}
+EOF
+
+
+# END FIREFOX-CUSTOMIZATION
 
 # END_TINT_COFIGURATION
 sudo reboot   
