@@ -1,7 +1,9 @@
 #!/bin/bash
 
+sudo DEBIAN_FRONTEND=noninteractive apt-get install ubuntu-gnome-desktop
+echo "set shared/default-x-display-manager lightdm | debconf-comunicate"
 # DEPENDENCIES PART 
-sudo apt-get install lightdm -y   # I NEED TEST THIS PART IF IS NECESSARY OR NOT 
+#sudo apt-get install lightdm -y   # I NEED TEST THIS PART IF IS NECESSARY OR NOT 
 sudo apt-get install openbox-gnome-session -y  # I NEED TEST THIS PART IF IS NECESSARY OR NOT 
 sudo apt-get install openbox -y 
 sudo apt-get install obmenu -y 
