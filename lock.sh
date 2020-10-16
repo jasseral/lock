@@ -12,7 +12,8 @@ sudo apt-get install nitrogen -y
 sudo apt-get install xdotool -y
 sudo apt install gnome-system-tools -y
 
-
+mkdir /wallpapers
+chmod -Rf 777 /wallpapers
 
 
 mkdir ~/.config/nitrogen/
@@ -21,7 +22,7 @@ mkdir ~/.config/nitrogen/
 # Make the file  ~/.config/nitrogen/bg-saved.cfg
 cat > ~/.config/nitrogen/bg-saved.cfg <<EOF
 [xin_-1]
-file=~/Downloads/wallpaper1.png
+file=/wallpapers/wallpaper1.png
 mode=4
 bgcolor=#000000
 
@@ -40,7 +41,7 @@ view=list
 recurse=true
 sort=alpha
 icon_caps=false
-dirs=~/Downloads;
+dirs=/wallpapers;
 
 EOF
 
@@ -57,7 +58,7 @@ EOF
 
 # GET WALLPAPERS 
 # Go to Download folder
-cd ~/Downloads/
+cd ~/wallpapers
 wget https://raw.githubusercontent.com/jasseral/lock/master/wallpaper1.png
 wget https://raw.githubusercontent.com/jasseral/lock/master/wallpaper2.png
 
