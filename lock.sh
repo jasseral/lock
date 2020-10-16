@@ -58,7 +58,7 @@ EOF
 
 # GET WALLPAPERS 
 # Go to Download folder
-cd ~/wallpapers
+cd /wallpapers
 wget https://raw.githubusercontent.com/jasseral/lock/master/wallpaper1.png
 wget https://raw.githubusercontent.com/jasseral/lock/master/wallpaper2.png
 
