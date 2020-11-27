@@ -2,6 +2,7 @@
 
 # DEFAULT USER FOLDER
 
+mkdir ~/.config/autostart/ 
 cat > ~/.config/autostart/firefox.desktop <<EOF
 [Desktop Entry]
 Type=Application
