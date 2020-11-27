@@ -169,7 +169,7 @@ EOF
 
 # DEPENDENCIES PART 
 sudo apt-get update
-sudo apt-get install gnome-tweak-tool
+sudo apt-get install -y gnome-tweak-tool
 sudo apt-get install -y gnome-shell-extension-dash-to-panel
 
 # PRE LOAD CONFIGURATION
